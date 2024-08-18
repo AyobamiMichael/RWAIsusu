@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🔗 AssetChain Starterkit
 
 AssetChain Starterkit is an open-source, up-to-date toolkit for building decentralized applications (dapps) on the AssetChain Blockchain[`Native blockchain for Xend Finance's real-world asset OAE (Onchain Asset Environment)`]. It's designed to make it easier for developers to create and deploy smart contracts and build user interfaces that interact with those contracts.
@@ -60,3 +61,6 @@ Please see [CONTRIBUTING.MD](https://github.com/AssetChain-Academy/assetchain_st
 
 
 With :heart:, <a href="https://github.com/KodeSage" target="_blank">James Harrison</a> and <a href="https://github.com/theiceeman" target="_blank">KelvinIOT</a>
+=======
+# RWAIsusu
+>>>>>>> a39540aa98bb69a92b2d9be2972b2195fb623ba1
