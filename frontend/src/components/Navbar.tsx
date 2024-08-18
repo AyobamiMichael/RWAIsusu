@@ -25,7 +25,7 @@ export const Navbar = () => {
           </div>
           <div className="flex flex-col text-white">
             <span className="font-bold leading-tight ">
-              Asset Chain Starterkits
+              RWA ISUSU
             </span>
             <span className="text-xs">by Xend Finance</span>
           </div>

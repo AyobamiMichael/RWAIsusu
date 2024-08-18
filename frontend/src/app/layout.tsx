@@ -5,8 +5,8 @@ import Providers from "@/components/Providers";
 
 
 export const metadata: Metadata = {
-  title: "Asset Chain Starterkits",
-  description: "Built with  Asset Chain 🔗",
+  title: "RWA ISUSU",
+  description: "Built with XENDRWA Asset Chain 🔗",
 };
 
 export default function RootLayout({

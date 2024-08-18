@@ -2,7 +2,8 @@
 import { useAccount } from "wagmi";
 //import Debug from "@/components/Debug";
 //import Checkmetamaskconnection from "@/components/Metamaskconnectioncheking";
-import WalletCreation from "@/components/Walletcreation";
+//import WalletCreation from "@/components/Walletcreation";
+import SignInSignUp from "@/components/SigninSignup";
 
 //  <Debug />
 export default function Home() {
@@ -11,8 +12,23 @@ export default function Home() {
     <>
       <div className="pt-10">
        
-      <WalletCreation />
-        <div className="text-center mt-8 bg-[#DAE8FF] p-10">
+      <SignInSignUp />
+        
+      </div>
+    </>
+  );
+}
+
+
+
+
+
+
+
+
+/**
+ * 
+ * <div className="text-center mt-8 bg-[#DAE8FF] p-10">
           <h1 className="text-4xl my-0">Debug your Contracts</h1>
           <p className="text-neutral">
             You can debug & interact with your deployed contracts here.
@@ -22,7 +38,4 @@ export default function Home() {
             </code>{" "}
           </p>
         </div>
-      </div>
-    </>
-  );
-}
+ */
