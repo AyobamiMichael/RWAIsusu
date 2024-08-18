@@ -1,6 +1,69 @@
 import { HardhatRuntimeEnvironment } from "hardhat/types";
 import { DeployFunction } from "hardhat-deploy/types";
 import { Contract } from "ethers";
+import { parseUnits } from "ethers"; // Import parseUnits directly
+
+const deployContracts: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
+  const { deployer } = await hre.getNamedAccounts();
+  const { deploy } = hre.deployments;
+
+  // Deploy Greeter contract
+  const greeterDeployment = await deploy("Greeter", {
+    from: deployer,
+    args: ["Welcome to Assetnet"],
+    log: true,
+    autoMine: true,
+  });
+
+  console.log("Greeter deployed to:", greeterDeployment.address);
+
+  // Deploy RWAToken contract with an initial supply of 1,000,000 RWA
+  const rwaTokenDeployment = await deploy("RWAToken", {
+    from: deployer,
+    args: [parseUnits("1000000", 18)], // Use parseUnits directly
+    log: true,
+    autoMine: true,
+  });
+
+  console.log("RWAToken deployed to:", rwaTokenDeployment.address);
+};
+
+export default deployContracts;
+
+deployContracts.tags = ["Greeter", "RWAToken"];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//import { HardhatRuntimeEnvironment } from "hardhat/types";
+//import { DeployFunction } from "hardhat-deploy/types";
+//import { Contract } from "ethers";
 
 /**
  * Deploys a contract named "YourContract" using the deployer account and
@@ -8,7 +71,7 @@ import { Contract } from "ethers";
  *
  * @param hre HardhatRuntimeEnvironment object.
  */
-const deployYourContract: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
+/* const deployYourContract: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
   /*
 
     When deploying to live networks (e.g `yarn deploy --network assetchain_testnet`), the deployer account
@@ -18,27 +81,31 @@ const deployYourContract: DeployFunction = async function (hre: HardhatRuntimeEn
     with a random private key in the .env file (then used on hardhat.config.ts)
     You can run the `yarn account` command to check your balance in every network.
   */
-  const { deployer } = await hre.getNamedAccounts();
-  const { deploy } = hre.deployments;
+  
 
-  await deploy("Greeter", {
-    from: deployer,
+
+//    const { deployer } = await hre.getNamedAccounts();
+ // const { deploy } = hre.deployments;
+
+  //await deploy("Greeter", {
+   // from: deployer,
     // Contract constructor arguments
-    args: ["Welcome to Assetnet"],
-    log: true,
+   // args: ["Welcome to Assetnet"],
+   // log: true,
     // autoMine: can be passed to the deploy function to make the deployment process faster on local networks by
     // automatically mining the contract deployment transaction. There is no effect on live networks.
-    autoMine: true,
-  });
+   // autoMine: true,
+ // });
 
   // Get the deployed contract to interact with it after deploying.
-  const yourContract = await hre.ethers.getContract<Contract>("Greeter", deployer);
-  console.log("👋 Initial greeting:", await yourContract.greet());
-};
+ // const yourContract = await hre.ethers.getContract<Contract>("Greeter", deployer);
+  //console.log("👋 Initial greeting:", await yourContract.greet());
+//};
 
-export default deployYourContract;
+//export default deployYourContract;
 
 
 // Tags are useful if you have multiple deploy files and only want to run one of them.
 // e.g. yarn deploy --tags Greeter
-deployYourContract.tags = ["Greeter"];
+
+//deployYourContract.tags = ["Greeter"];
