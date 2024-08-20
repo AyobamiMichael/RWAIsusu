@@ -6,6 +6,7 @@ const CreateGroup: React.FC = () => {
   const [groupName, setGroupName] = useState('');
   const [numMembers, setNumMembers] = useState<number | ''>('');
   const [phoneNumber, setPhoneNumber] = useState('');
+  const [currency, setCurrency] = useState('Naira'); // Default currency set to Naira
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
@@ -13,6 +14,7 @@ const CreateGroup: React.FC = () => {
     console.log('Group Name:', groupName);
     console.log('Number of Members:', numMembers);
     console.log('Phone Number:', phoneNumber);
+    console.log('Selected Currency:', currency);
   };
 
   return (
@@ -60,6 +62,23 @@ const CreateGroup: React.FC = () => {
               className="w-full p-2 border border-gray-300 rounded"
               required
             />
+          </div>
+
+          <div className="mb-4">
+            <label htmlFor="currency" className="block text-lg font-medium mb-2">
+              Select Currency
+            </label>
+            <select
+              id="currency"
+              value={currency}
+              onChange={(e) => setCurrency(e.target.value)}
+              className="w-full p-2 border border-gray-300 rounded"
+              required
+            >
+              <option value="Naira">Naira</option>
+              <option value="USDT">USDT</option>
+              <option value="RWA">RWA</option>
+            </select>
           </div>
 
           <button

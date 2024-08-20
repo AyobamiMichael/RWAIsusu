@@ -59,7 +59,7 @@ const SignInSignUp: React.FC = () => {
             required
           />
         </div>
-        <Link href="/create-group">
+        <Link href="/dashboard">
         <button
           type="submit"
           className="w-full bg-blue-500 text-white p-2 rounded mt-4"
