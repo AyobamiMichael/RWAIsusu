@@ -41,7 +41,7 @@ const Debug = () => {
     const result = await contract.read.greet();
     setGreeter(result);
   };
-  const WrteContract = async () => {
+  const WriteContract = async () => {
     if (!account) return;
     const { request } = await publicClient.simulateContract({
       address: deployedContracts.assetchain_testnet.address as `0x${string}`,
@@ -112,7 +112,7 @@ const Debug = () => {
                       autoComplete="off"
                     />
                     <button
-                      onClick={WrteContract}
+                      onClick={WriteContract}
                       className="bottom-2 right-2 bg-blue-500 text-white py-2 px-4 rounded disabled:cursor-not-allowed disabled:bg-slate-200"
                       disabled={disableButton}
                     >

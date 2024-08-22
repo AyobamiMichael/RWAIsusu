@@ -1,19 +1,18 @@
 "use client";
 import { useAccount } from "wagmi";
-//import Debug from "@/components/Debug";
-//import Checkmetamaskconnection from "@/components/Metamaskconnectioncheking";
+import Debug from "@/components/Debug";
+import Checkmetamaskconnection from "@/components/Metamaskconnectioncheking";
 //import WalletCreation from "@/components/Walletcreation";
 import SignInSignUp from "@/components/SigninSignup";
 
 //  <Debug />
+//   <SignInSignUp />
 export default function Home() {
   const { address: connectedAddress } = useAccount();
   return (
     <>
       <div className="pt-10">
-       
       <SignInSignUp />
-        
       </div>
     </>
   );
